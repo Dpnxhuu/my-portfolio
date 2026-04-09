@@ -73,7 +73,7 @@ const Footer = () => {
                   <li key={link.id}>
                     <button
                       onClick={() => scrollToSection(link.id)}
-                      className="group flex items-center gap-2 text-white/60 hover:text-primary transition-all duration-300"
+                      className="group flex items-center gap-2 cursor-pointer text-white/60 hover:text-primary transition-all duration-300"
                     >
                       <div className="w-1.5 h-1.5 rounded-full bg-white/30 group-hover:bg-primary group-hover:w-2 transition-all duration-300" />
                       <span className="text-sm">{link.label}</span>
@@ -86,7 +86,9 @@ const Footer = () => {
 
           <FadeIn delay={200}>
             <div>
-              <h4 className="text-white font-semibold  mb-6 text-lg">Connect With Me</h4>
+              <h4 className="text-white font-semibold  mb-6 text-lg">
+                Connect With Me
+              </h4>
               <p className="text-white/60 text-sm mb-6 leading-relaxed">
                 Let's connect and create something amazing together.
               </p>

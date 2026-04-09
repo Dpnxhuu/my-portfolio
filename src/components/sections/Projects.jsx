@@ -95,7 +95,7 @@ const Projects = () => {
               <button
                 key={category}
                 onClick={() => handleCategoryChange(category)}
-                className={`group relative px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeCategory === category ? "text-white" : "text-white/60 hover:text-white"}`}
+                className={`group relative cursor-pointer px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeCategory === category ? "text-white" : "text-white/60 hover:text-white"}`}
               >
                 <div
                   className={`absolute inset-0 rounded-full transition-all duration-300 ${activeCategory === category ? "bg-primary/10 opacity-100" : "bg-white/5 border border-white/10 group-hover:bg-white/10"}`}
@@ -138,7 +138,7 @@ const Projects = () => {
                 <button
                   onClick={prevSlide}
                   disabled={currentIndex === 0}
-                  className="flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-4 items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed z-10"
+                  className="flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-4 cursor-pointer items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed z-10"
                   aria-label="Previous Project"
                 >
                   <ChevronLeft className="w-6 h-6 text-white" />
@@ -146,7 +146,7 @@ const Projects = () => {
                 <button
                   onClick={nextSlide}
                   disabled={currentIndex >= filteredProjects.length - 3}
-                  className="flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-4 items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed z-10"
+                  className="flex absolute cursor-pointer right-0 top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-4 items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed z-10"
                   aria-label="Next Projects"
                 >
                   <ChevronRight className="w-6 h-6 text-white" />

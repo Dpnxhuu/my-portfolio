@@ -78,3 +78,13 @@ export const skills = [
     experience: "1+ years",
   },
 ];
+
+
+export const skillLinks = {
+  HTML5: "https://html.com/",
+  CSS3: "https://www.w3schools.com/css/",
+  JavaScript: "https://www.javascript.com/",
+  "React.js": "https://react.dev",
+  "Tailwind CSS": "https://tailwindcss.com/",
+  "C++": "https://isocpp.org/",
+};

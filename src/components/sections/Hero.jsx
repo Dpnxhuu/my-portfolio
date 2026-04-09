@@ -47,8 +47,15 @@ const Hero = () => {
             <FadeIn delay={300}>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="inline-flex items-center gap-0 mb-12 group"
+                className="relative rounded-full inline-flex items-center gap-0 mb-12 group overflow-hidden transition-all duration-250 sm:duration-150 cursor-pointer hover:bg-primary hover:-translate-y-0.5 active:scale-[0.97] active:bg-primary"
               >
+                <span
+                  className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-400 ease-in-out skew-x-[-20deg] pointer-events-none z-20"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent, rgba(141, 255, 105,0.545), transparent)",
+                  }}
+                />
                 <div className="relative z-10 bg-white text-[#212121] rounded-2xl px-6.5 py-3.25 text-base font-medium border border-white">
                   Get in touch
                 </div>
