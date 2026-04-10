@@ -7,9 +7,18 @@ import Projects from './components/sections/Projects';
 import Services from './components/sections/Services';
 import Contact from './components/sections/Contact';
 import Footer from './components/layout/Footer'
+import Preloader from './components/animations/Preloader';
+import { useState } from 'react';
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
   return (
+
+     <>
+      {loading && <Preloader onComplete={() => setLoading(false)} />}
+      {!loading && (
+
     <div className='min-h-screen bg-black'>
       <Navbar/>
 
@@ -24,7 +33,9 @@ const App = () => {
 
       <Footer/>
     </div>
-  )
-}
+    )}
+    </>
+  );
+;}
 
 export default App
