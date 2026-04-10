@@ -13,7 +13,7 @@ const ProjectCard = ({project}) => {
             alt={title}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
             />
-            <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent opacity-70 group-hover:opacity-50 transition-opacity duration-300"/>
+            <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent opacity-60 group-hover:opacity-50 transition-opacity duration-300"/>
             <div className="absolute bottom-4 right-4 flex items-center gap-3">
                 {demoUrl && (
                     <a 

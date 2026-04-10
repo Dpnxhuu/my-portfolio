@@ -2,11 +2,9 @@ import React, { useState, useRef } from "react";
 import { projects, categories } from "../../data/projects";
 import {
   Briefcase,
-  Sparkles,
   Target,
   Globe,
   Palette,
-  Zap,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
@@ -18,12 +16,24 @@ const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef(null);
 
+  // ✅ Ek function — sab jagah use hoga
+  const getVisibleCards = () =>
+    window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const cardWidth = container.offsetWidth / getVisibleCards();
+      const newIndex = Math.round(container.scrollLeft / cardWidth);
+      setCurrentIndex(newIndex);
+    }
+  };
+
   const filteredProjects =
     activeCategory === "All"
       ? projects
       : projects.filter((project) => project.category === activeCategory);
 
-  // Reset carousel when category changes
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
     setCurrentIndex(0);
@@ -36,9 +46,7 @@ const Projects = () => {
     setCurrentIndex(index);
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      const visibleCards =
-        window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
-      const cardWidth = container.offsetWidth / visibleCards;
+      const cardWidth = container.offsetWidth / getVisibleCards();
       container.scrollTo({
         left: cardWidth * index,
         behavior: "smooth",
@@ -47,8 +55,7 @@ const Projects = () => {
   };
 
   const nextSlide = () => {
-    const visibleCards =
-      window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+    const visibleCards = getVisibleCards();
     const maxIndex = Math.max(0, filteredProjects.length - visibleCards);
     const newIndex = Math.min(currentIndex + 1, maxIndex);
     scrollToIndex(newIndex);
@@ -59,12 +66,14 @@ const Projects = () => {
     scrollToIndex(newIndex);
   };
 
-  // Category icons mapping
   const categoryIcons = {
     All: Target,
     "Web Apps": Globe,
     "UI Design": Palette,
   };
+
+  // ✅ Dots ki count — screen size ke hisaab se automatically change hogi
+  const dotCount = Math.max(0, filteredProjects.length - getVisibleCards());
 
   return (
     <section id="projects" className="relative py-20 bg-black overflow-hidden">
@@ -88,6 +97,7 @@ const Projects = () => {
             </p>
           </div>
         </FadeIn>
+
         {/* Category filter */}
         <FadeIn delay={100}>
           <div className="flex flex-wrap justify-center gap-3 mb-16">
@@ -95,12 +105,19 @@ const Projects = () => {
               <button
                 key={category}
                 onClick={() => handleCategoryChange(category)}
-                className={`group relative cursor-pointer px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeCategory === category ? "text-white" : "text-white/60 hover:text-white"}`}
+                className={`group relative cursor-pointer px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  activeCategory === category
+                    ? "text-white"
+                    : "text-white/60 hover:text-white"
+                }`}
               >
                 <div
-                  className={`absolute inset-0 rounded-full transition-all duration-300 ${activeCategory === category ? "bg-primary/10 opacity-100" : "bg-white/5 border border-white/10 group-hover:bg-white/10"}`}
+                  className={`absolute inset-0 rounded-full transition-all duration-300 ${
+                    activeCategory === category
+                      ? "bg-primary/10 opacity-100"
+                      : "bg-white/5 border border-white/10 group-hover:bg-white/10"
+                  }`}
                 />
-
                 <div className="relative flex items-center gap-2">
                   {React.createElement(categoryIcons[category], {
                     className: "w-4 h-4",
@@ -114,15 +131,17 @@ const Projects = () => {
             ))}
           </div>
         </FadeIn>
-        {/* Project Carousal */}
+
+        {/* Project Carousel */}
         <FadeIn delay={200}>
           <div className="relative">
             <div
               ref={scrollContainerRef}
+              onScroll={handleScroll}
               className="overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar"
             >
               <div className="flex gap-6 pb-4">
-                {filteredProjects.map((project, index) => (
+                {filteredProjects.map((project) => (
                   <div
                     key={project.id}
                     className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start"
@@ -132,37 +151,41 @@ const Projects = () => {
                 ))}
               </div>
             </div>
-            {/* Navigation Arrow */}
+
+            {/* Navigation Arrows */}
             {filteredProjects.length > 1 && (
               <>
                 <button
                   onClick={prevSlide}
                   disabled={currentIndex === 0}
-                  className="flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-4 cursor-pointer items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed z-10"
+                  className="flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-4 cursor-pointer items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full lg:hover:bg-white/20 transition-all lg:duration-300 disabled:opacity-50 disabled:cursor-not-allowed z-10 sm:active:bg-white/20 active:scale-95 active:duration-100"
                   aria-label="Previous Project"
                 >
                   <ChevronLeft className="w-6 h-6 text-white" />
                 </button>
                 <button
                   onClick={nextSlide}
-                  disabled={currentIndex >= filteredProjects.length - 3}
-                  className="flex absolute cursor-pointer right-0 top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-4 items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed z-10"
+                  disabled={currentIndex >= filteredProjects.length - getVisibleCards()}
+                  className="flex absolute cursor-pointer right-0 top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-4 items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full lg:hover:bg-white/20 transition-all lg:duration-300 disabled:opacity-50 disabled:cursor-not-allowed z-10 sm:active:bg-white/20 active:scale-95 active:duration-100"
                   aria-label="Next Projects"
                 >
                   <ChevronRight className="w-6 h-6 text-white" />
                 </button>
               </>
             )}
+
             {/* Navigation Dots */}
             {filteredProjects.length > 1 && (
               <div className="flex items-center justify-center gap-2 mt-8">
-                {Array.from({
-                  length: Math.max(0, filteredProjects.length - 2),
-                }).map((_, index) => (
+                {Array.from({ length: dotCount }).map((_, index) => (
                   <button
                     key={index}
                     onClick={() => scrollToIndex(index)}
-                    className={`transition-all duration-300 rounded-full ${index === currentIndex ? "bg-primary w-6 h-2" : "bg-white/30 w-2 h-2 hover:bg-white/50"}`}
+                    className={`transition-all duration-300 rounded-full ${
+                      index === currentIndex
+                        ? "bg-primary w-6 h-2"
+                        : "bg-white/30 w-2 h-2 hover:bg-white/50"
+                    }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}

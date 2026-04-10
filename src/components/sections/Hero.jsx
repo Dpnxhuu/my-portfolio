@@ -47,10 +47,10 @@ const Hero = () => {
             <FadeIn delay={300}>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="relative rounded-full inline-flex items-center gap-0 mb-12 group overflow-hidden transition-all duration-250 sm:duration-150 cursor-pointer hover:bg-primary hover:-translate-y-0.5 active:scale-[0.97] active:bg-primary"
+                className="relative rounded-full inline-flex items-center gap-0 mb-12 group overflow-hidden transition-all lg:duration-300 duration-150 cursor-pointer lg:hover:bg-primary lg:hover:-translate-y-0.5 active:scale-[0.97]"
               >
                 <span
-                  className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-400 ease-in-out skew-x-[-20deg] pointer-events-none z-20"
+                  className="md:block hidden absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out skew-x-[-20deg] pointer-events-none z-20"
                   style={{
                     background:
                       "linear-gradient(90deg, transparent, rgba(141, 255, 105,0.545), transparent)",

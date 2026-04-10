@@ -133,7 +133,7 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 bg-linear-to-r from-primary/10 to-primary text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-primary/30 active:scale-95 active:brightness-90 transition-all duration-200 flex items-center justify-center gap-2 group"
+                  className="w-full px-6 py-3 bg-linear-to-r from-primary/10 to-primary text-white font-medium rounded-xl lg:hover:shadow-2xl lg:hover:shadow-primary/30 active:scale-95 active:brightness-90 transition-all lg:duration-300 duration-150 flex items-center justify-center gap-2 group"
                 >
                   <span>Send Message</span>
                   <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />

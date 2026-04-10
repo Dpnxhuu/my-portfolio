@@ -78,8 +78,8 @@ export const projects = [
     category: 'UI Design',
     technologies: ['React', 'Tailwind CSS'],
     metrics: 'Built with React — currently live',
-    demoUrl: 'https://github.com/Dpnxhuu',
-    githubUrl: 'https://github.com/Dpnxhuu',
+    demoUrl: 'https://dpnxhuu-portfolio.vercel.app/',
+    githubUrl: 'https://github.com/Dpnxhuu/my-portfolio',
   },
 
   
