@@ -21,7 +21,6 @@ export const projects = [
     demoUrl: 'https://strike-hackathon-project-dpnshuu.vercel.app/',
     githubUrl: 'https://github.com/Dpnxhuu/STRIKE-HACKATHON-PROJECT',
   },
-
   {
     id: 3,
     title: 'The Pinnacle - Real Estate Website',
@@ -33,7 +32,6 @@ export const projects = [
     demoUrl: 'https://dpnxhuu.github.io/The-Pinnacle-Web-Page/',
     githubUrl: 'https://github.com/Dpnxhuu/The-Pinnacle-Web-Page',
   },
-  
   {
     id: 4,
     title: 'Weather App',
@@ -45,7 +43,6 @@ export const projects = [
     demoUrl: 'https://weather-today-by-dpnshuu.vercel.app/',
     githubUrl: 'https://github.com/Dpnxhuu/Weather-App',
   },
-  
   {
     id: 5,
     title: 'Calculator',
@@ -57,19 +54,17 @@ export const projects = [
     demoUrl: 'https://calculator-by-dpnshuu.vercel.app/',
     githubUrl: 'https://github.com/Dpnxhuu/Calculator',
   },
-
   {
-  id: 6,
-  title: 'Music Web App',
-  description: 'A responsive music player web app with playlist management and audio controls.',
-  image: '/images/projects/project6.png',
-  category: 'Web Apps',
-  technologies: ['HTML', 'CSS', 'JavaScript'],
-  metrics: 'Custom audio player with full controls',
-  demoUrl: 'https://muxic-fy-by-dpnshuu.vercel.app/',
-  githubUrl: 'https://github.com/Dpnxhuu/Music-App',
-},
-
+    id: 6,
+    title: 'Music Web App',
+    description: 'A responsive music player web app with playlist management and audio controls.',
+    image: '/images/projects/project6.png',
+    category: 'Web Apps',
+    technologies: ['HTML', 'CSS', 'JavaScript'],
+    metrics: 'Custom audio player with full controls',
+    demoUrl: 'https://muxic-fy-by-dpnshuu.vercel.app/',
+    githubUrl: 'https://github.com/Dpnxhuu/Music-App',
+  },
   {
     id: 7,
     title: 'Portfolio Website',
@@ -81,8 +76,17 @@ export const projects = [
     demoUrl: 'https://dpnxhuu-portfolio.vercel.app/',
     githubUrl: 'https://github.com/Dpnxhuu/my-portfolio',
   },
-
-  
+  {
+    id: 8,
+    title: 'MyFlowList - Todo App',
+    description: 'A clean and minimal todo app to manage daily tasks with filters, dark mode, and localStorage persistence.',
+    image: '/images/projects/project8.png',
+    category: 'Web Apps',
+    technologies: ['React', 'Tailwind CSS', 'Vite'],
+    metrics: 'Tasks persist with localStorage + dark mode',
+    demoUrl: 'https://myflowlist.vercel.app/',
+    githubUrl: 'https://github.com/Dpnxhuu/ToDo-app-react',
+  },
 ]
 
 export const categories = ['All', 'Web Apps', 'UI Design'];
