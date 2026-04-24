@@ -6,27 +6,29 @@ import FadeIn from "../animations/FadeIn";
 
 const Skills = () => {
   const skillCategories = {
-    "Frontend Development": [
-      skills.find((s) => s.name === "HTML"),
-      skills.find((s) => s.name === "CSS"),
-      skills.find((s) => s.name === "JavaScript"),
-      skills.find((s) => s.name === "React.js"),
-      skills.find((s) => s.name === "Tailwind CSS"),
-      skills.find((s) => s.name === "Responsive Design"),
-      skills.find((s) => s.name === "DOM Manipulation"),
-    ].filter(Boolean),
+  "Frontend Development": [
+    skills.find((s) => s.name === "HTML"),
+    skills.find((s) => s.name === "CSS"),
+    skills.find((s) => s.name === "JavaScript"),
+    skills.find((s) => s.name === "React.js"),
+    skills.find((s) => s.name === "React Router"), 
+    skills.find((s) => s.name === "Tailwind CSS"),
+    skills.find((s) => s.name === "Responsive Design"),
+    skills.find((s) => s.name === "DOM Manipulation"),
+  ].filter(Boolean),
 
-    "Version Control": [
-      skills.find((s) => s.name === "Git"),
-      skills.find((s) => s.name === "GitHub"),
-    ].filter(Boolean),
+  "Version Control": [
+    skills.find((s) => s.name === "Git"),
+    skills.find((s) => s.name === "GitHub"),
+  ].filter(Boolean),
 
-    "Tools & Design": [
-      skills.find((s) => s.name === "Figma"),
-      skills.find((s) => s.name === "Vite"),
-      skills.find((s) => s.name === "API Integration"),
-    ].filter(Boolean),
-  };
+  "Tools & Design": [
+    skills.find((s) => s.name === "Figma"),
+    skills.find((s) => s.name === "Vite"),
+    skills.find((s) => s.name === "GSAP"), 
+    skills.find((s) => s.name === "API Integration"),
+  ].filter(Boolean),
+};
 
   const getProficiencyLevel = (level) => {
     const levels = {

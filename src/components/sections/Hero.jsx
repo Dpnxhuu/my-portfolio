@@ -6,6 +6,9 @@ import {
   SiTailwindcss,
   SiNodedotjs,
   SiMongodb,
+  SiJavascript,
+  SiGit,
+  SiFigma,
 } from "react-icons/si";
 import { PERSONAL_INFO, STATS } from "../../utils/constants";
 import { scrollToSection } from "../../hooks/useScrollSpy";
@@ -32,21 +35,19 @@ const Hero = () => {
 
             <FadeIn delay={100}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-6 leading-tight">
-                React.js Developer Portfolio
+               I Build with React.js
               </h1>
             </FadeIn>
 
             <FadeIn delay={200}>
               <p className="text-lg text-white/70 max-w-137.5 mb-8">
-                Building modern, scalable web applications with React,
-                JavaScript and cutting-edge technologies. Transforming ideas
-                into exceptional digital experience.
+              Turning ideas into clean, responsive web experiences using React, Tailwind CSS, and JavaScript.
               </p>
             </FadeIn>
 
             <FadeIn delay={300}>
               <button
-                onClick={() => scrollToSection("contact")}
+                onClick={() => scrollToSection("projects")}
                 className="relative rounded-full inline-flex items-center gap-0 mb-12 group overflow-hidden transition-all lg:duration-300 duration-150 cursor-pointer lg:hover:bg-primary lg:hover:-translate-y-0.5 active:scale-[0.97]"
               >
                 <span
@@ -57,7 +58,7 @@ const Hero = () => {
                   }}
                 />
                 <div className="relative z-10 bg-white text-[#212121] rounded-2xl px-6.5 py-3.25 text-base font-medium border border-white">
-                  Get in touch
+                  View Projects
                 </div>
               </button>
             </FadeIn>
@@ -104,16 +105,16 @@ const Hero = () => {
                         <SiReact className="w-full h-full text-primary" />
                       </div>
                       <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                        <SiNextdotjs className="w-full h-full text-primary" />
+                        <SiJavascript className="w-full h-full text-primary" />
                       </div>
                       <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                        <SiNodedotjs className="w-full h-full text-primary" />
+                        <SiGit className="w-full h-full text-primary" />
                       </div>
                       <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
                         <SiTailwindcss className="w-full h-full text-primary" />
                       </div>
                       <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                        <SiMongodb className="w-full h-full text-primary" />
+                        <SiFigma className="w-full h-full text-primary" />
                       </div>
                     </div>
                   </FadeIn>

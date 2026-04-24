@@ -3,7 +3,7 @@ export const services = [
     id: 1,
     icon: 'Layout',
     title: 'Frontend Development',
-    description: 'Building responsive and performant web applications using React, Next.js, and modern JavaScript.',
+    description: 'Building responsive web applications using React, Tailwind CSS, and JavaScript.',
   },
   {
     id: 2,
@@ -21,18 +21,18 @@ export const services = [
     id: 4,
     icon: 'Code2',
     title: 'Custom Components',
-    description: 'Developing reusable, scalable component libraries and design systems that maintain consistency.',
+    description: 'Building reusable React components with clean and maintainable code.',
   },
   {
     id: 5,
     icon: 'Zap',
     title: 'Performance Optimization',
-    description: 'Optimizing web applications for speed and efficiency through code splitting and lazy loading.',
+    description: 'Writing clean, optimized code focused on fast load times and smooth user experience.',
   },
   {
     id: 6,
     icon: 'Globe',
     title: 'Web Deployment',
-    description: 'Deploying and managing web applications on modern cloud platforms with CI/CD pipelines.',
+    description: 'Deploying web applications on platforms like Vercel and Netlify.',
   },
 ]

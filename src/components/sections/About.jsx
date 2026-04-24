@@ -102,8 +102,7 @@ const About = () => {
                         Expertise
                       </h3>
                       <p className="text-sm text-white/70 leading-relaxed">
-                        Specification in building scalable web applications with
-                        modern technologies and best practices.
+                      Focused on building clean, responsive UIs with React and Tailwind CSS.
                       </p>
                     </div>
                   </div>
@@ -143,25 +142,25 @@ const About = () => {
                   <div className="grid grid-cols-3 gap-6 text-center">
                     <div>
                       <div className="text-2xl font-bold text-primary mb-1">
-                        100%
+                        1+
                       </div>
                       <div className="text-xs text-white/60">
-                        Client Satisfaction
+                        Years Experience
                       </div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-primary mb-1">
-                        24/7
+                        5+
                       </div>
                       <div className="text-xs text-white/60">
-                        Support Available
+                       Technologies Mastered  
                       </div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-primary mb-1">
-                        Fast
+                        7+
                       </div>
-                      <div className="text-xs text-white/60">Delivery Time</div>
+                      <div className="text-xs text-white/60">Live Projects Deployed</div>
                     </div>
                   </div>
                 </div>
