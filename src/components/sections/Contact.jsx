@@ -1,8 +1,14 @@
 import React, { useState } from "react";
-import { Mail, MapPin, Send, MessageSquare, Palette } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { Mail, MapPin, Send, MessageSquare } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
 import { PERSONAL_INFO, SOCIAL_LINKS } from "../../utils/constants";
 import FadeIn from "../animations/FadeIn";
+
+// EmailJS Credentials
+const SERVICE_ID = "service_2eplk1j";
+const TEMPLATE_ID = "template_se9eipo";
+const PUBLIC_KEY = "O7ax1KYt5pU8j7GGQ";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +17,7 @@ const Contact = () => {
     message: "",
   });
   const [status, setStatus] = useState({ type: "", message: "" });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -33,13 +40,36 @@ const Contact = () => {
       return;
     }
 
-    setStatus({
-      type: "success",
-      message: "Message sent successfully! I will get back to you.",
-    });
-    setFormData({ name: "", email: "", message: "" });
+    setLoading(true);
 
-    setTimeout(() => setStatus({ type: "", message: "" }), 5000);
+    emailjs
+      .send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        PUBLIC_KEY
+      )
+      .then(() => {
+        setStatus({
+          type: "success",
+          message: "Message sent successfully! I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus({ type: "", message: "" }), 5000);
+      })
+      .catch(() => {
+        setStatus({
+          type: "error",
+          message: "Something went wrong. Please try again!",
+        });
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   const socialIcons = {
@@ -131,17 +161,23 @@ const Contact = () => {
                     placeholder="Tell me about your project..."
                   />
                 </div>
+
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 bg-linear-to-r from-primary/10 to-primary text-white font-medium rounded-xl lg:hover:shadow-2xl lg:hover:shadow-primary/30 active:scale-95 active:brightness-90 transition-all lg:duration-300 duration-150 flex items-center justify-center gap-2 group"
+                  disabled={loading}
+                  className="w-full px-6 py-3 bg-linear-to-r from-primary/10 to-primary text-white font-medium rounded-xl lg:hover:shadow-2xl lg:hover:shadow-primary/30 active:scale-95 active:brightness-90 transition-all lg:duration-300 duration-150 flex items-center justify-center gap-2 group disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <span>Send Message</span>
+                  <span>{loading ? "Sending..." : "Send Message"}</span>
                   <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
 
                 {status.message && (
                   <div
-                    className={`p-4 rounded-xl ${status.type === "success" ? "bg-green-500/10 border border-green-500/20 text-green-400" : "bg-red-500/10 border border-red-500/20 text-red-400"}`}
+                    className={`p-4 rounded-xl ${
+                      status.type === "success"
+                        ? "bg-green-500/10 border border-green-500/20 text-green-400"
+                        : "bg-red-500/10 border border-red-500/20 text-red-400"
+                    }`}
                   >
                     {status.message}
                   </div>
@@ -149,6 +185,7 @@ const Contact = () => {
               </form>
             </div>
           </FadeIn>
+
           {/* Contact Info */}
           <FadeIn delay={200}>
             <div className="space-y-8">
@@ -171,15 +208,15 @@ const Contact = () => {
                     </div>
                     <div className="flex-1">
                       <p className="text-sm text-white/60 mb-1">Email</p>
-                      <a
-                        href={`mailto:${PERSONAL_INFO.email}`}
+                      
+                      <a  href={`mailto:${PERSONAL_INFO.email}`}
                         className="text-white hover:text-[#A8FF8D] transition-colors font-medium"
                       >
                         {PERSONAL_INFO.email}
                       </a>
                     </div>
                   </div>
-                  <div className="absolute inset-0  bg-linear-to-br from-primary/0 to-primary/0  group-hover:from-primary/5 group-hover:to-primary/5 rounded-2xl transition-all duration-300 pointer-events-none" />
+                  <div className="absolute inset-0 bg-linear-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-primary/5 rounded-2xl transition-all duration-300 pointer-events-none" />
                 </div>
 
                 <div className="group relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300">
@@ -194,7 +231,6 @@ const Contact = () => {
                       </p>
                     </div>
                   </div>
-                  <div />
                 </div>
               </div>
 
@@ -206,8 +242,8 @@ const Contact = () => {
                     .map(([Platform, url]) => {
                       const Icon = socialIcons[Platform];
                       return Icon ? (
-                        <a
-                          href={url}
+                        
+                        <a  href={url}
                           key={Platform}
                           target="_blank"
                           rel="noopener noreferrer"
