@@ -2,7 +2,7 @@
 
 A clean and modern personal portfolio website built with React and deployed on Vercel.
 
-**Live Demo:** [dpnxhuu-portfolio.vercel.app](https://dpnxhuu-portfolio.vercel.app)
+**Live Demo:** [dpnxhuu.vercel.app](https://dpnxhuu.vercel.app)
 
 ---
 
