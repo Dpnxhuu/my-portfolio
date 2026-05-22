@@ -11,10 +11,14 @@ const Skills = () => {
     skills.find((s) => s.name === "CSS"),
     skills.find((s) => s.name === "JavaScript"),
     skills.find((s) => s.name === "React.js"),
-    skills.find((s) => s.name === "React Router"), 
+    skills.find((s) => s.name === "Next.js"),
     skills.find((s) => s.name === "Tailwind CSS"),
     skills.find((s) => s.name === "Responsive Design"),
-    skills.find((s) => s.name === "DOM Manipulation"),
+  ].filter(Boolean),
+
+  "Backend & Database": [
+    skills.find((s) => s.name === "MySQL"),
+    skills.find((s) => s.name === "API Integration"),
   ].filter(Boolean),
 
   "Version Control": [
@@ -23,10 +27,8 @@ const Skills = () => {
   ].filter(Boolean),
 
   "Tools & Design": [
+    skills.find((s) => s.name === "GSAP"),
     skills.find((s) => s.name === "Figma"),
-    skills.find((s) => s.name === "Vite"),
-    skills.find((s) => s.name === "GSAP"), 
-    skills.find((s) => s.name === "API Integration"),
   ].filter(Boolean),
 };
 
@@ -81,7 +83,7 @@ const Skills = () => {
             </p>
           </div>
         </FadeIn>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {Object.entries(skillCategories).map(
             ([category, categorySkills], categoryIndex) => (
               <FadeIn delay={categoryIndex * 100} key={category}>
@@ -109,7 +111,7 @@ const Skills = () => {
                                   {skill.name}
                                 </div>
                                 <div className="text-xs text-white/50">
-                                  {skill.experience}
+                                  {skill.tags.join(" · ")}
                                 </div>
                               </div>
                             </div>

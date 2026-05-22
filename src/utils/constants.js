@@ -2,7 +2,7 @@ export const PERSONAL_INFO = {
   name: 'Deepanshu',
   title: 'Frontend Developer | Open to Work',
   email: 'dpnxhuu@email.com',
-  location: 'Meerut, Uttarpradesh, India',
+  location: 'Meerut, Uttar Pradesh, India',
   tagline: 'Crafting seamless digital experiences with modern web technologies.',
   resume: '/resume.pdf',
   bio: [
@@ -19,16 +19,16 @@ export const SOCIAL_LINKS = {
 };
 
 export const STATS = [
-  { label: 'Years Experience', value: '1+' },
-  { label: 'Projects Completed', value: '7+' },
-  { label: 'Technologies', value: '14+' },
+  // { label: 'Years Experience', value: '1+' },
+  { label: 'Projects Completed', value: '5+' },
+  { label: 'Technologies', value: '10+' },
   { label: 'GitHub Commits', value: '350+' },
 ];
 
 export const ABOUT_STATS = [
-  { label: 'Projects Built', value: '7+' },
+  { label: 'Projects Built', value: '5+' },
   { label: 'Code Commits', value: '350+' },
-  { label: 'Skills', value: '14+' },
+  { label: 'Skills', value: '10+' },
 ];
 
 export const NAV_LINKS = [

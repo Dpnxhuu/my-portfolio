@@ -35,13 +35,13 @@ const Hero = () => {
 
             <FadeIn delay={100}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-6 leading-tight">
-               I Build with React.js
+               I Build with React & Next.js
               </h1>
             </FadeIn>
 
             <FadeIn delay={200}>
               <p className="text-lg text-white/70 max-w-137.5 mb-8">
-              Turning ideas into clean, responsive web experiences using React, Tailwind CSS, and JavaScript.
+              Turning ideas into clean, responsive web experiences using React, Next.js, Tailwind CSS, and JavaScript.
               </p>
             </FadeIn>
 
@@ -114,7 +114,7 @@ const Hero = () => {
                         <SiTailwindcss className="w-full h-full text-primary" />
                       </div>
                       <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                        <SiFigma className="w-full h-full text-primary" />
+                        <SiNextdotjs className="w-full h-full text-primary" />
                       </div>
                     </div>
                   </FadeIn>

@@ -3,10 +3,11 @@ import { Download, Code2, Sparkles, Code } from "lucide-react";
 import {
   SiReact,
   SiTailwindcss,
-  SiHtml5,
-  SiCss,
   SiJavascript,
-  SiCplusplus,
+  SiNextdotjs,
+  SiMysql,
+  SiGit,
+  SiGithub,
 } from "react-icons/si";
 import { PERSONAL_INFO, ABOUT_STATS } from "../../utils/constants";
 import FadeIn from "../animations/FadeIn";
@@ -16,13 +17,13 @@ import { skillLinks } from "../../data/skills";
 const About = () => {
   // Skills
   const skills = [
-    { name: "React.js", icon: SiReact, color: "#61DAFB" },
-    { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-    { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
-    { name: "CSS3", icon: SiCss, color: "#1572B6" },
-    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-    { name: "C++", icon: SiCplusplus, color: "#00599C" },
-  ];
+  { name: "React.js", icon: SiReact, color: "#61DAFB" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
+  { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+  { name: "Git", icon: SiGit, color: "#F05032" },
+];
 
   return (
     <section id="about" className="relative py-20  bg-black overflow-hidden">
@@ -61,7 +62,7 @@ const About = () => {
                 </div>
               </FadeIn>
             </div>
-            <FadeIn delay={300}>
+            {/* <FadeIn delay={300}>
               <div className="grid grid-cols-3 gap-8">
                 {ABOUT_STATS.map((stat, index) => (
                   <div key={index} className="relative">
@@ -75,7 +76,7 @@ const About = () => {
                   </div>
                 ))}
               </div>
-            </FadeIn>
+            </FadeIn> */}
             <FadeIn delay={400}>
               <button
                 onClick={() => window.open(PERSONAL_INFO.resume, "_blank")}
@@ -142,23 +143,23 @@ const About = () => {
                   <div className="grid grid-cols-3 gap-6 text-center">
                     <div>
                       <div className="text-2xl font-bold text-primary mb-1">
-                        1+
+                        350+
                       </div>
                       <div className="text-xs text-white/60">
-                        Years Experience
+                        Code Commits
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-primary mb-1">
+                        10+
+                      </div>
+                      <div className="text-xs text-white/60">
+                       Technologies  
                       </div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-primary mb-1">
                         5+
-                      </div>
-                      <div className="text-xs text-white/60">
-                       Technologies Mastered  
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-primary mb-1">
-                        7+
                       </div>
                       <div className="text-xs text-white/60">Live Projects Deployed</div>
                     </div>
@@ -177,7 +178,7 @@ const About = () => {
                 Tech Stack & Expertise
               </h3>
               <p className="text-sm text-white/60">
-                Technologies I work with to amazing produce.
+                Technologies I use to build modern and scalable web applications.
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full max-w-4xl">

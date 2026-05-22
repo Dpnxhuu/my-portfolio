@@ -4,7 +4,7 @@ export const projects = [
     title: "Apple iPhone 15 Pro Clone",
     description:
       "Pixel-perfect Apple iPhone 15 Pro landing page clone with scroll animations and interactive carousel.",
-    image: "/images/projects/project9.png",
+    image: "/images/projects/project1.png",
     category: "UI Design",
     technologies: ["React 19", "Tailwind CSS v4", "Gsap", "Three.js"],
     metrics: "Pixel-perfect Apple UI replica",
@@ -16,7 +16,7 @@ export const projects = [
     title: "Portfolio Website",
     description:
       "Modern developer portfolio built with React, featuring animations and contact form.",
-    image: "/images/projects/project7.png",
+    image: "/images/projects/project2.png",
     category: "UI Design",
     technologies: ["React 19", "Tailwind CSS v4", "Vite 8"],
     metrics: "Built with React — currently live",
@@ -26,46 +26,46 @@ export const projects = [
 
   {
     id: 3,
-    title: "Weather App React",
+    title: "Movie Search App",
+    description: "Movie discovery app built with Next.js search films, view details powered by TMDB API.",
+    image: "/images/projects/project3.png",
+    category: "Web Apps",
+    technologies: ["Next.js", "Tailwind CSS", "TMDB API"],
+    metrics: "Live movie data via TMDB API + dynamic routing",
+    demoUrl: "https://explorecinema.vercel.app/",
+    githubUrl: "https://github.com/Dpnxhuu/movie-search-app",
+  },
+
+  {
+    id: 4,
+    title: "Weather App",
     description:
       "Real-time weather app using OpenWeather API to fetch live weather data by city.",
     image: "/images/projects/project4.png",
     category: "Web Apps",
     technologies: ["React 19", "Tailwind CSS v4", "Axios", "API"],
     metrics: "Live API integration with real-time data",
-    demoUrl: "https://aajkamosam.vercel.app/",
+    demoUrl: "https://skycastbydpnshuu.vercel.app/",
     githubUrl: "https://github.com/Dpnxhuu/Weather-App-react",
   },
+
   {
-    id: 4,
+    id: 5,
     title: "MyFlowList - Todo App",
     description:
       "A clean and minimal todo app to manage daily tasks with filters, dark mode, and localStorage persistence.",
-    image: "/images/projects/project8.png",
+    image: "/images/projects/project5.png",
     category: "Web Apps",
     technologies: ["React 19", "Tailwind CSS v4", "Vite 8"],
     metrics: "Tasks persist with localStorage + dark mode",
     demoUrl: "https://myflowlist.vercel.app/",
     githubUrl: "https://github.com/Dpnxhuu/ToDo-app-react",
   },
-
-  {
-    id: 5,
-    title: "Strike - Hackathon Project",
-    description:
-      "A landing page built during a hackathon in 24 hours using HTML and CSS.",
-    image: "/images/projects/project2.png",
-    category: "UI Design",
-    technologies: ["HTML", "CSS"],
-    metrics: "Built & deployed in 24hrs at hackathon",
-    demoUrl: "https://strike-hackathon-project-dpnshuu.vercel.app/",
-    githubUrl: "https://github.com/Dpnxhuu/STRIKE-HACKATHON-PROJECT",
-  },
   {
     id: 6,
     title: "Amazon UI Clone",
     description: "Pixel-perfect Amazon homepage clone built with HTML and CSS.",
-    image: "/images/projects/project1.png",
+    image: "/images/projects/project6.png",
     category: "UI Design",
     technologies: ["HTML", "CSS"],
     metrics: "Pixel-perfect Amazon UI replica",
