@@ -1,5 +1,5 @@
 import React from "react";
-import { Download, Code2, Sparkles, Code } from "lucide-react";
+import { Download, Code2, Sparkles, Code, Scan } from "lucide-react";
 import {
   SiReact,
   SiTailwindcss,
@@ -9,6 +9,7 @@ import {
   SiGit,
   SiGithub,
 } from "react-icons/si";
+import { Zap, Focus, BriefcaseBusiness } from "lucide-react";
 import { PERSONAL_INFO, ABOUT_STATS } from "../../utils/constants";
 import FadeIn from "../animations/FadeIn";
 import RadialGradientBackground from "../backgrounds/RadialGradientBackground";
@@ -103,7 +104,7 @@ const About = () => {
                         Expertise
                       </h3>
                       <p className="text-sm text-white/70 leading-relaxed">
-                      Focused on building clean, responsive UIs with React and Tailwind CSS.
+                      Focused on building clean, responsive UIs with React, Next.js and Tailwind CSS.
                       </p>
                     </div>
                   </div>
@@ -141,27 +142,27 @@ const About = () => {
                 <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
                 <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 h-full">
                   <div className="grid grid-cols-3 gap-6 text-center">
-                    <div>
+                    <div className="flex justify-center flex-col items-center">
                       <div className="text-2xl font-bold text-primary mb-1">
-                        350+
+                       <Zap className="w-5 h-5 text-primary"/>
                       </div>
                       <div className="text-xs text-white/60">
-                        Code Commits
+                        Fast Learner
                       </div>
                     </div>
-                    <div>
+                    <div className="flex justify-center flex-col items-center">
                       <div className="text-2xl font-bold text-primary mb-1">
-                        10+
+                        <Focus className="w-5 h-5 text-primary"/>
                       </div>
                       <div className="text-xs text-white/60">
-                       Technologies  
+                       Detail Oriented  
                       </div>
                     </div>
-                    <div>
+                    <div className="flex justify-center flex-col items-center">
                       <div className="text-2xl font-bold text-primary mb-1">
-                        5+
+                            <BriefcaseBusiness className="w-5 h-5 text-primary" />
                       </div>
-                      <div className="text-xs text-white/60">Live Projects Deployed</div>
+                      <div className="text-xs text-white/60">Open to Work</div>
                     </div>
                   </div>
                 </div>

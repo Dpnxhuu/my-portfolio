@@ -6,9 +6,9 @@ export const PERSONAL_INFO = {
   tagline: 'Crafting seamless digital experiences with modern web technologies.',
   resume: '/resume.pdf',
   bio: [
-    "I'm a passionate React Developer with strong hands-on experience in building responsive and user-friendly web applications.",
-    "My expertise spans the core frontend ecosystem, from React to JavaScript and modern CSS. I'm committed to writing clean, maintainable code and staying updated with the latest web technologies.",
-    "Currently open to frontend developer roles where I can contribute, learn, and grow alongside a great team.",
+    "I'm a Frontend Developer with hands-on experience building responsive, user-friendly web applications using React, Next.js, and Tailwind CSS.",
+    "My expertise spans the core frontend ecosystem — from component-based UI with React to server-side rendering with Next.js, clean styling with Tailwind, and backend integration with MySQL and REST APIs.",
+    "Currently open to frontend developer roles where I can contribute, learn, and grow alongside a great team.Currently open to frontend developer roles where I can contribute, learn, and grow alongside a great team.",
   ],
 };
 
